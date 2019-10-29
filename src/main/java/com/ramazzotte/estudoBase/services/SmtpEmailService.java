@@ -9,16 +9,12 @@ import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-<<<<<<< HEAD
 import com.ramazzotte.estudoBase.domain.Pedido;
 
-=======
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15
 public class SmtpEmailService extends AbstractEmailService {
 
 	@Autowired
 	private MailSender mailSender;
-<<<<<<< HEAD
 
 	@Autowired
 	private JavaMailSender javamailSender;
@@ -32,20 +28,6 @@ public class SmtpEmailService extends AbstractEmailService {
 		mailSender.send(msg);
 		Log.info("Email enviado");
 
-=======
-	
-	@Autowired
-	private JavaMailSender javamailSender;
-	
-	private static final Logger Log = LoggerFactory.getLogger(SmtpEmailService.class);
-	
-	@Override
-	public void sendEmail(SimpleMailMessage msg) {
-		Log.info("Enviando Email Html...");
-		mailSender.send(msg);
-		Log.info("Email enviado");
-		
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15
 	}
 
 	@Override
@@ -53,7 +35,6 @@ public class SmtpEmailService extends AbstractEmailService {
 		Log.info("Enviando Email...");
 		javamailSender.send(msg);
 		Log.info("Email enviado");
-<<<<<<< HEAD
 
 	}
 
@@ -62,9 +43,3 @@ public class SmtpEmailService extends AbstractEmailService {
 	
 
 }
-=======
-		
-	}
-
-}
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15

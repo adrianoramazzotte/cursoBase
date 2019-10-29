@@ -10,10 +10,6 @@ import org.springframework.context.annotation.Profile;
 
 import com.ramazzotte.estudoBase.services.DBService;
 import com.ramazzotte.estudoBase.services.EmailService;
-<<<<<<< HEAD
-=======
-import com.ramazzotte.estudoBase.services.MockEmailService;
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15
 import com.ramazzotte.estudoBase.services.SmtpEmailService;
 
 
@@ -42,9 +38,5 @@ public class DevConfig {
 	public EmailService emailService() {
 		return new SmtpEmailService();
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15
 
 }
