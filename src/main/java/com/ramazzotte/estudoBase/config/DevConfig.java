@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.ramazzotte.estudoBase.services.DBService;
+import com.ramazzotte.estudoBase.services.EmailService;
+import com.ramazzotte.estudoBase.services.SmtpEmailService;
 
 
 
@@ -30,6 +32,11 @@ public class DevConfig {
 		dbService.instatiateTesDatabase();
 
 		return true;
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
 	}
 
 }
