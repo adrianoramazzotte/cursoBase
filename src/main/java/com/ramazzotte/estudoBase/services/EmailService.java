@@ -13,10 +13,7 @@ public interface EmailService {
 	void sendOrderConfirmationEmail(Pedido obj);
 	void sendOrderConfirmationHtmlEmail(Pedido obj);
 	void sendHtmlEmail(MimeMessage msg);
-<<<<<<< HEAD
 
-=======
->>>>>>> a403130a6e2927add83cdc761fefe4a2bda59d15
 	
 	
 
