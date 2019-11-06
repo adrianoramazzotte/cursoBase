@@ -20,6 +20,7 @@ import com.ramazzotte.estudoBase.domain.PagamentoComCartao;
 import com.ramazzotte.estudoBase.domain.Pedido;
 import com.ramazzotte.estudoBase.domain.Produto;
 import com.ramazzotte.estudoBase.domain.enuns.EstadoPagamento;
+import com.ramazzotte.estudoBase.domain.enuns.Perfil;
 import com.ramazzotte.estudoBase.domain.enuns.TipoCliente;
 import com.ramazzotte.estudoBase.repository.CategoriaRepository;
 import com.ramazzotte.estudoBase.repository.CidadeRepository;
@@ -126,13 +127,19 @@ public class DBService {
 
 		Cliente cli1 = new Cliente(null, "Maria Silva", "adriano.ramazzotte@gmail.com", "36378912377",TipoCliente.PESSOAFISICA,pe.encode("123")); 
 		cli1.getTelefones().addAll(Arrays.asList("27362322","93838393"));
+		
+		Cliente cli2 = new Cliente(null, "Ana Admin", "ana@gmail.com", "39110229051",TipoCliente.PESSOAFISICA,pe.encode("123")); 
+		cli2.getTelefones().addAll(Arrays.asList("999858585","4335255252"));
+		cli2.addPerfil(Perfil.ADMIN);
+		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim","38220834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Rua Avenida Matos", "105", "sala 800", "Centro","38220988", cli1, c2);
+		Endereco e3 = new Endereco(null, "Rua Arapongas", "105", null, "Centro","38220988", cli2, c2);
 
 		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
-
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		cli2.getEnderecos().addAll(Arrays.asList(e3));
+		clienteRepository.saveAll(Arrays.asList(cli1,cli2));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2, e3));
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Pedido ped1 = new Pedido(null, sdf.parse("10/10/2019 10:32"),e1, cli1 );
 		Pedido ped2 = new Pedido(null, sdf.parse("20/10/2019 10:32"),e2, cli1 );
