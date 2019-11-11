@@ -3,8 +3,8 @@ package com.ramazzotte.estudoBase.services;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.mail.SimpleMailMessage;
-import javax.mail.internet.MimeMessage;
 
+import com.ramazzotte.estudoBase.domain.Cliente;
 import com.ramazzotte.estudoBase.domain.Pedido;
 
 public interface EmailService {
@@ -13,6 +13,7 @@ public interface EmailService {
 	void sendOrderConfirmationEmail(Pedido obj);
 	void sendOrderConfirmationHtmlEmail(Pedido obj);
 	void sendHtmlEmail(MimeMessage msg);
+	void sendNewPasswordEmail(Cliente cliente, String newPass);
 
 	
 	
