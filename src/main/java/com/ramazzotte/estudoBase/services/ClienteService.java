@@ -17,9 +17,12 @@ import com.ramazzotte.estudoBase.domain.Cliente;
 import com.ramazzotte.estudoBase.domain.Endereco;
 import com.ramazzotte.estudoBase.domain.dto.ClienteDTO;
 import com.ramazzotte.estudoBase.domain.dto.ClienteNewDTO;
+import com.ramazzotte.estudoBase.domain.enuns.Perfil;
 import com.ramazzotte.estudoBase.domain.enuns.TipoCliente;
 import com.ramazzotte.estudoBase.repository.ClienteRepository;
 import com.ramazzotte.estudoBase.repository.EnderecoRepository;
+import com.ramazzotte.estudoBase.security.UserSS;
+import com.ramazzotte.estudoBase.services.exception.AuthorizationException;
 import com.ramazzotte.estudoBase.services.exception.DataIntegrityException;
 import com.ramazzotte.estudoBase.services.exception.ObjectNotFoundException;
 
@@ -35,6 +38,12 @@ public class ClienteService {
 
 
 	public Cliente find(Integer id) {
+		
+		UserSS user = UserService.authenticated();
+		if (user==null || !user.hasRole(Perfil.ADMIN)&& !id.equals(user.getId())) {
+			throw new AuthorizationException("Acesso negado");
+		}
+		
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
