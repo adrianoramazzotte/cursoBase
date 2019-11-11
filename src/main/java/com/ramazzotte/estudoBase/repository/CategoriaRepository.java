@@ -7,8 +7,5 @@ import com.ramazzotte.estudoBase.domain.Categoria;
 
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
-	
-
-	
+public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {	
 }
