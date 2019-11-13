@@ -59,7 +59,7 @@ public class DBService {
 
 	public void instatiateTesDatabase() throws ParseException {
 
-		Categoria cat1 = new Categoria(null, "Informática");
+		Categoria cat1 = new Categoria(null, "InformÃ¡tica");
 		Categoria cat2 = new Categoria(null, "Escritorio");
 		Categoria cat3 = new Categoria(null, "Cama");
 		Categoria cat4 = new Categoria(null, "Mesa e Banho");
@@ -67,7 +67,7 @@ public class DBService {
 		Categoria cat6 = new Categoria(null, "Jardinagem");
 		Categoria cat7 = new Categoria(null, "Ferramenta");
 		Categoria cat8 = new Categoria(null, "Naturais");
-		Categoria cat9 = new Categoria(null, "Eletrônico");
+		Categoria cat9 = new Categoria(null, "EletrÃ´nico");
 
 
 		Produto p1 = new Produto(null, "Computador", 2000.00);
@@ -76,8 +76,8 @@ public class DBService {
 		Produto p4 = new Produto(null, "Erva", 2000.00);
 		Produto p5 = new Produto(null, "Erva2", 800.00);
 		Produto p6= new Produto(null, "TVs", 80.00);
-		Produto p7 = new Produto(null, "Plavas de Vídeo", 2000.00);
-		Produto p8 = new Produto(null, "Lençol", 800.00);
+		Produto p7 = new Produto(null, "Plavas de VÃ­deo", 2000.00);
+		Produto p8 = new Produto(null, "LenÃ§ol", 800.00);
 		Produto p9 = new Produto(null, "Toalha", 80.00);
 		Produto p10 = new Produto(null, "Traveseiro", 2000.00);
 		Produto p11 = new Produto(null, "Flor", 800.00);
@@ -113,10 +113,10 @@ public class DBService {
 		produtorepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13));
 
 		Estado est1 = new Estado(null, "Minas Gerais");
-		Estado est2 = new Estado(null, "São Paulo");
+		Estado est2 = new Estado(null, "SÃ£o Paulo");
 
 		Cidade c1 = new Cidade(null, "Uberlandia", est1);
-		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c2 = new Cidade(null, "SÃ£o Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
 
 		est1.getCidades().addAll(Arrays.asList(c1));
