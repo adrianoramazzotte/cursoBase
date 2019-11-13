@@ -9,7 +9,7 @@ import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-import com.ramazzotte.estudoBase.domain.Pedido;
+
 
 public class SmtpEmailService extends AbstractEmailService {
 
